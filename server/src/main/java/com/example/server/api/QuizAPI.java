@@ -18,6 +18,10 @@ public class QuizAPI {
 
     public JsonNode getQuestions() {
         String url = "https://opentdb.com/api.php?amount=50&type=multiple";
+<<<<<<< HEAD
+=======
+
+>>>>>>> main
         RestTemplate restTemplate = new RestTemplate();
         ObjectMapper mapper = new ObjectMapper();
 

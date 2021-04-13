@@ -2,23 +2,22 @@ package com.example.server.models;
 
 import java.util.ArrayList;
 
-public class MultipleChoiceQuestion {
-
+public class MultiChoiceQPayload {
     private String category;
     private String type;
     private String difficulty;
     private String question;
-    private String correctAnswer;
-    private ArrayList incorrectAnswers;
-    private String id;
+    private String correct_answer;
+    private ArrayList<String> incorrect_answers;
+//    private String id;
 
-    public MultipleChoiceQuestion(String category, String type, String difficulty, String question, String correctAnswer, ArrayList incorrectAnswers){
+    public MultiChoiceQPayload(String category, String type, String difficulty, String question, String correct_answer, ArrayList incorrect_answers){
         this.category = category;
         this.type = type;
         this.difficulty = difficulty;
         this.question = question;
-        this.correctAnswer = correctAnswer;
-        this.incorrectAnswers = new ArrayList<String>();
+        this.correct_answer = correct_answer;
+        this.incorrect_answers = incorrect_answers;
     }
 
     public String getCategory() {
@@ -54,30 +53,30 @@ public class MultipleChoiceQuestion {
     }
 
     public String getCorrectAnswer() {
-        return correctAnswer;
+        return correct_answer;
     }
 
-    public void setCorrectAnswer(String correctAnswer) {
-        this.correctAnswer = correctAnswer;
+    public void setCorrectAnswer(String correct_answer) {
+        this.correct_answer = correct_answer;
     }
 
     public ArrayList getIncorrectAnswers() {
-        return incorrectAnswers;
+        return incorrect_answers;
     }
 
-    public void setIncorrectAnswers(ArrayList incorrectAnswers) {
-        this.incorrectAnswers = incorrectAnswers;
+    public void setIncorrectAnswers(ArrayList incorrect_answers) {
+        this.incorrect_answers = incorrect_answers;
     }
 
-    public String getId() {
-        return id;
-    }
+//    public String getId() {
+//        return id;
+//    }
+//
+//    public void setId(String id) {
+//        this.id = id;
+//    }
 
-    public void setId(String id) {
-        this.id = id;
-    }
 
-
-    public MultipleChoiceQuestion(){
+    public MultiChoiceQPayload(){
     }
 }

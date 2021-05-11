@@ -1,8 +1,12 @@
 package com.example.server.models;
 
+import com.fasterxml.jackson.databind.PropertyNamingStrategy;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
+
 import java.util.ArrayList;
 
-public class MultipleChoiceQuestion {
+@JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
+public class MultipleChoiceQuestionPayload {
 
     private String category;
     private String type;
@@ -10,10 +14,9 @@ public class MultipleChoiceQuestion {
     private String question;
     private String correct_answer;
     private ArrayList<String> incorrect_answers;
-    private String id;
 
 
-    public MultipleChoiceQuestion(String category, String type, String difficulty, String question, String correct_answer, ArrayList incorrect_answers) {
+    public MultipleChoiceQuestionPayload(String category, String type, String difficulty, String question, String correct_answer, ArrayList incorrect_answers){
         this.category = category;
         this.type = type;
         this.difficulty = difficulty;
@@ -22,7 +25,7 @@ public class MultipleChoiceQuestion {
         this.incorrect_answers = incorrect_answers;
     }
 
-    public MultipleChoiceQuestion() {
+    public MultipleChoiceQuestionPayload(){
     }
 
     public String getCategory() {
@@ -73,11 +76,4 @@ public class MultipleChoiceQuestion {
         this.incorrect_answers = incorrect_answers;
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
 }
